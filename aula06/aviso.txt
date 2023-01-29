@@ -1,0 +1,1 @@
+Essa aula foi sobre o uso do node no replit, então todo código dessa aula esta hospedado no link: https://replit.com/@GuilhermeSil189/aula06cursonode
