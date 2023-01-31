@@ -1,0 +1,14 @@
+{
+  "name": "aula12",
+  "version": "1.0.0",
+  "description": "upload de arquivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Silva",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^2.1.1"
+  }
+}
