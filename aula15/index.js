@@ -6,20 +6,30 @@ const url = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PAS
 mongodb.connect(url, { useNewUrlParser: true }, (err, banco) => {
   if (err) throw err;
   const dbo = banco.db("teste-node");
-  const obj = { nome: "Juliana", idade: 16 };
+  const obj = { nome: "Natália", idade: 33 };
 
   // dbo.collection("usuarios").insertOne(obj, (err, res) => {
   //   if (err) throw err;
   //   console.log(`Nova linha adicionada`);
-  //   banco.close();
+  //   // banco.close();
   // });
 
+  // dbo
+  //   .collection("usuarios")
+  //   .find({}, { projection: { _id: 0 } })
+  //   .toArray((err, res) => {
+  //     if (err) throw err;
+  //     console.log(res[0].nome);
+  //     banco.close();
+  //   });
+
+  const query = {};
   dbo
     .collection("usuarios")
-    .find({}, { projection: { _id: 0 } })
+    .find(query, { projection: { _id: 0 } })
     .toArray((err, res) => {
       if (err) throw err;
-      console.log(res[0].nome);
+      console.log(res);
       banco.close();
     });
 });
