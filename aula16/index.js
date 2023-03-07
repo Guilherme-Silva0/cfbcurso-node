@@ -23,10 +23,23 @@ mongodb.connect(url, { useNewUrlParser: true }, (err, banco) => {
   //     banco.close();
   //   });
 
+  // const query = {};
+  // dbo
+  //   .collection("usuarios")
+  //   .find(query, { projection: { _id: 0 } })
+  //   .toArray((err, res) => {
+  //     if (err) throw err;
+  //     console.log(res);
+  //     banco.close();
+  //   });
+
+  const ordenacao = { idade: 1 };
   const query = {};
+
   dbo
     .collection("usuarios")
-    .find(query, { projection: { _id: 0 } })
+    .find(query)
+    .sort(ordenacao)
     .toArray((err, res) => {
       if (err) throw err;
       console.log(res);
