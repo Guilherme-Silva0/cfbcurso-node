@@ -33,16 +33,24 @@ mongodb.connect(url, { useNewUrlParser: true }, (err, banco) => {
   //     banco.close();
   //   });
 
-  const ordenacao = { idade: 1 };
-  const query = {};
+  // const ordenacao = { idade: 1 };
+  // const query = {};
 
-  dbo
-    .collection("usuarios")
-    .find(query)
-    .sort(ordenacao)
-    .toArray((err, res) => {
-      if (err) throw err;
-      console.log(res);
-      banco.close();
-    });
+  // dbo
+  //   .collection("usuarios")
+  //   .find(query)
+  //   .sort(ordenacao)
+  //   .toArray((err, res) => {
+  //     if (err) throw err;
+  //     console.log(res);
+  //     banco.close();
+  //   });
+
+  const query = { nome: "Fernanda" };
+
+  dbo.collection("usuarios").deleteOne(query, (err, _) => {
+    if (err) throw err;
+    console.log("Linha deletada");
+    banco.close();
+  });
 });
